@@ -39,11 +39,8 @@ likeAnimal = (animal) => {
 changeSort = () => {
   }
  
-changeFilter = () => {
-  this.setState({
+changeFilter = (filter) => this.setState({filter})
 
-  })
-}
 
   render(){
   
@@ -51,7 +48,7 @@ changeFilter = () => {
     <div className="App">
        {/* <Login /> */}
        <Navbar  /> 
-       <SearchBar />
+       <SearchBar changeFilter={this.changeFilter}/>
        <Home AllAnimals={this.state.animals} FavoriteAnimals={this.likeAnimal} /> 
        <FavoriteAnimals FavoriteAnimals={this.state.FavoriteAnimals}/> 
       

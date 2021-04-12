@@ -10,10 +10,10 @@ class AnimalContainer extends Component{
         console.log(this.props)
         return(
             <div>
-            <input type="text" className="input" placeholder="Search..." />
+            {/* <input type="text" className="input" placeholder="Search..." />
             <ul>
 
-            </ul>
+            </ul> */}
                {this.props.Animals.map(animal => <AnimalCard key={animal.id} animal={animal} FavoriteAnimals={this.props.FavoriteAnimals} />)}
             </div>
         )
