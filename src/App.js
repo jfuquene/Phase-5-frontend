@@ -36,10 +36,30 @@ likeAnimal = (animal) => {
   }
 }
 
-changeSort = () => {
-  }
+changeSort = sort => this.setState({sort})
  
-changeFilter = (filter) => this.setState({filter})
+changeFilter = filter => this.setState({filter})
+
+displayAnimals = () => {
+  /// make a copy of all the animals in the state 
+  let displayAnimals = [...this.state.animals]
+
+
+  /// check to see if filter is "all"
+  ///if it isnt, then we need to run some filter
+  if(this.state.filter !== "All"){
+    displayAnimals = displayAnimals.filter(animal => animal.name == this.state.filter )
+  }
+
+  ///once the array is filtered 
+  ///check to see what sort by, then sort by that 
+  if(this.state.sort === "alphabetically"){
+    return displayAnimals.sort((animal1, animal2) => animal1.name > animal2.name? 1 : -1)
+  } else {
+    return displayAnimals
+  }
+
+}
 
 
   render(){
@@ -48,12 +68,9 @@ changeFilter = (filter) => this.setState({filter})
     <div className="App">
        {/* <Login /> */}
        <Navbar  /> 
-       <SearchBar changeFilter={this.changeFilter}/>
-       <Home AllAnimals={this.state.animals} FavoriteAnimals={this.likeAnimal} /> 
+       <SearchBar changeFilter={this.changeFilter} sort={this.state.sort} changeSort={this.changeSort}/>
+       <Home AllAnimals={this.displayAnimals()} FavoriteAnimals={this.likeAnimal} /> 
        <FavoriteAnimals FavoriteAnimals={this.state.FavoriteAnimals}/> 
-      
-       
-    
     
     </div>
   );
