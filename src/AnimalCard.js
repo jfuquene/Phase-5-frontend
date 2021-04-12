@@ -2,11 +2,11 @@ import React from 'react';
 import CardDeck from 'react-bootstrap/CardDeck';
 import Card from 'react-bootstrap/Card'
 
-const AnimalCard = ({animal }) => {
+const AnimalCard = ({animal, FavoriteAnimals }) => {
     console.log(animal)
     return(
         
-                <Card style={{ width: '18rem' }}>
+                <Card onClick={ () =>FavoriteAnimals(animal)} style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={animal.image} />
                 <Card.Body>
                 <Card.Title>{animal.name}</Card.Title>

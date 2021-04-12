@@ -4,30 +4,17 @@ import AnimalCard from './AnimalCard'
 
 class AnimalContainer extends Component{
 
-    state = {
-        animals: [],
-        filtered: []
-    }
-
-    componentDidMount(){
-        fetch('http://localhost:3001/animals')
-        .then(res => res.json())
-        .then(data => {
-           this.setState({
-               animals: data
-            })
-    })}
     
 
     render (){
-        console.log(this.state.animals)
+        console.log(this.props)
         return(
             <div>
             <input type="text" className="input" placeholder="Search..." />
             <ul>
 
             </ul>
-               {this.state.animals.map(animal => <AnimalCard key={animal.id} animal={animal} />)}
+               {this.props.Animals.map(animal => <AnimalCard key={animal.id} animal={animal} FavoriteAnimals={this.props.FavoriteAnimals} />)}
             </div>
         )
     }

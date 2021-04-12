@@ -8,33 +8,53 @@ import FavoriteAnimals from './FavoriteAnimals'
 import SearchBar from './SearchBar'
 
 
+
  export default class App extends Component {
 
   state = {
-    view: "Home"
-  }
+    animals: [],
+    FavoriteAnimals: [],
+    sort: "", 
+    filter: "All"
+}
 
-  changeToFavorite = () => {
-    this.setState({
-      view: "Favorite Animals"
-    })
-  }
+componentDidMount(){
+    fetch('http://localhost:3001/animals')
+    .then(res => res.json())
+    .then(data => {
+       this.setState({
+           animals: data
+        })
+})}
 
-  changeToHome = () => {
-    this.setState({
-      view: "Home"
-    })
+likeAnimal = (animal) => {
+    if(!this.state.FavoriteAnimals.includes(animal)){
+  this.setState({
+  FavoriteAnimals: [...this.state.FavoriteAnimals, animal]})
+  } else {
+    alert("You can't like the same animal twice")
   }
+}
+
+changeSort = () => {
+  }
+ 
+changeFilter = () => {
+  this.setState({
+
+  })
+}
 
   render(){
   
   return (
     <div className="App">
        {/* <Login /> */}
-       <Navbar changeToHome={this.changeToHome} changeToFavorite={this.changeToFavorite} /> 
-       { this.state.view === "Favorite Animals" ? <FavoriteAnimals /> : null }
-       <Home /> 
-       <SearchBar/>
+       <Navbar  /> 
+       <SearchBar />
+       <Home AllAnimals={this.state.animals} FavoriteAnimals={this.likeAnimal} /> 
+       <FavoriteAnimals FavoriteAnimals={this.state.FavoriteAnimals}/> 
+      
        
     
     
