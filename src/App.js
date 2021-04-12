@@ -53,13 +53,15 @@ displayAnimals = () => {
 
   ///once the array is filtered 
   ///check to see what sort by, then sort by that 
-  if(this.state.sort === "alphabetically"){
-    return displayAnimals.sort((animal1, animal2) => animal1.name > animal2.name? 1 : -1)
-  } else {
+  // if(this.state.sort === "dog"){
+  //   return displayAnimals.sort((animal1, animal2) => animal1.name > animal2.name? 1 : -1)
+  // } else if (this.state.sort === "cat"){
+  //   return displayAnimals.sort((animal1, animal2) => animal1.name > animal2.name? 1 : -1)
+  // } else {
     return displayAnimals
   }
 
-}
+
 
 
   render(){
