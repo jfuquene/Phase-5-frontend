@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import {Link} from 'react-router-dom'
-class Login extends Component {
+class Signup extends Component {
   constructor(props) {
     super(props);
     this.state = { 
       username: '',
       email: '',
       password: '',
+      password_confirmation: '',
       errors: ''
      };
   }
@@ -17,19 +17,21 @@ handleChange = (event) => {
       [name]: value
     })
   };
-
-  handleSubmit = (event) => {
+handleSubmit = (event) => {
     event.preventDefault()
-    const {username, email, password} = this.state
-    let user = {
-      username: username,
-      email: email,
-      password: password
-    }
+    const {username, email, password, password_confirmation} = this.state
+    const reqObj = {
+      user: {
+        username: username,
+        email: email,
+        password: password,
+        password_confirmation: password_confirmation,
+      },
+    };
 
-    axios.post('http://localhost:3001/login', {user}, {withCredentials: true})
+    axios.post('http://localhost:3001/users', reqObj, {withCredentials: true})
     .then(response => {
-      if (response.data.logged_in) {
+      if (response.data.status === 'created') {
         this.props.handleLogin(response.data)
         this.redirect()
       } else {
@@ -44,27 +46,24 @@ handleChange = (event) => {
   redirect = () => {
     this.props.history.push('/')
   }
-
   handleErrors = () => {
     return (
       <div>
-        <ul>
-        {this.state.errors.map(error => {
-        return <li key={error}>{error}</li>
-          })}
-        </ul>
+        <ul>{this.state.errors.map((error) => {
+          return <li key={error}>{error}</li>
+        })}
+        </ul> 
       </div>
     )
   }
 
 
 
-
 render() {
-    const {username, email, password} = this.state
+    const {username, email, password, password_confirmation} = this.state
 return (
       <div>
-        <h1>Log In</h1>
+        <h1>Sign Up</h1>
         <form onSubmit={this.handleSubmit}>
           <input
             placeholder="username"
@@ -80,22 +79,27 @@ return (
             value={email}
             onChange={this.handleChange}
           />
-          <input
+          <input 
             placeholder="password"
             type="password"
             name="password"
             value={password}
             onChange={this.handleChange}
           />
-         <button placeholder="submit" type="submit">
-            Log In
+          <input
+            placeholder="password confirmation"
+            type="password"
+            name="password_confirmation"
+            value={password_confirmation}
+            onChange={this.handleChange}
+          />
+        
+          <button placeholder="submit" type="submit">
+            Sign Up
           </button>
-          <div>
-            or <Link to='/signup'>sign up</Link>
-          </div>
-          
-         </form>
-         <div>
+      
+        </form>
+        <div>
           {
             this.state.errors ? this.handleErrors() : null
           }
@@ -104,4 +108,4 @@ return (
     );
   }
 }
-export default Login;
+export default Signup;

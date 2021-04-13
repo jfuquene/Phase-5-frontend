@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import Navbar from './Navbar'
-import Home from './Home'
-import Login from './Login'
-import FavoriteAnimals from './FavoriteAnimals'
-import SearchBar from './SearchBar'
-import axios from 'axios'
-import {BrowserRouter, Switch, Route} from 'react-router-dom'
+import Navbar from './Navbar';
+import Home from './Home';
+import FavoriteAnimals from './FavoriteAnimals';
+import SearchBar from './SearchBar';
+import axios from 'axios';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import Landing from "./Landing";
+import Login from './Login';
+import Signup from './Signup';
 
 
 
@@ -84,18 +86,21 @@ displayAnimals = () => {
   }
 
 
-handleLogin = (data) => {
+  handleLogin = (data) => {
   this.setState({
     isLoggedIn: true, 
     user: data.user
   })  
-}
+  }
 
 handleLogout = () => {
   this.setState({
   isLoggedIn: false,
   user: {}
   })
+}
+componentWillMount() {
+  return this.props.loggedInStatus ? this.redirect() : null
 }
 
 
@@ -106,9 +111,9 @@ handleLogout = () => {
        {/* <Login /> */}
        <BrowserRouter>
        <Switch>
-         <Route exact path='/' component={}/>
-         <Route exact path='/login' component={}/>
-         <Route exact path='/signup' component={}/>
+         <Route exact path='/' render={props => (<Landing {...props} loggedInStatus={this.state.isLoggedIn}/>)}/>
+         <Route exact path='/login' render={props => (<Login {...props} handleLogin={this.handleLogin} loggedINStatus={this.state.isLoggedIn}/>)}/>
+         <Route exact path='/signup' render={props => (<Signup {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>)}/>
        </Switch>
        </BrowserRouter>
        
