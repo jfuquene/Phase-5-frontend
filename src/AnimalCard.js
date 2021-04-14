@@ -8,12 +8,14 @@ const AnimalCard = ({animal, FavoriteAnimals }) => {
     return(
         
                 <Card  style={{ width: '18rem' }}>
-                <Card.Img variant="top" src={animal.image} />
+                <Card.Img variant="top" src={animal.photos} />
                 <Card.Body>
-                <Card.Title>{animal.name}</Card.Title>
+                <Card.Title>{animal.name} - age:{animal.age}</Card.Title>
                 <Card.Text>
-                Some quick example text to build on the card title and make up the bulk of
-                the card's content.
+                {animal.gender}
+                </Card.Text>
+                <Card.Text>
+                {animal.description}
                 </Card.Text>
                 <Button onClick={ () =>FavoriteAnimals(animal)} variant="danger">Like</Button>
                 </Card.Body>

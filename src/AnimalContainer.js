@@ -2,23 +2,16 @@ import React, { Component } from "react";
 import AnimalCard from './AnimalCard'
 
 
-class AnimalContainer extends Component{
+const AnimalContainer = ({animals, FavoriteAnimals}) => {
 
     
-
-    render (){
-        console.log(this.props)
+console.log(animals)
         return(
             <div>
-            {/* <input type="text" className="input" placeholder="Search..." />
-            <ul>
-
-            </ul> */}
-               {this.props.Animals.map(animal => <AnimalCard key={animal.id} animal={animal} FavoriteAnimals={this.props.FavoriteAnimals} />)}
+             <input type="text" className="input" placeholder="Search..." />
+               {animals.map(animal => <AnimalCard key={animal.id} animal={animal} FavoriteAnimals={FavoriteAnimals} />)}
             </div>
         )
     }
-
-}
 
 export default AnimalContainer; 

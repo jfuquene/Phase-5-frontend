@@ -16,56 +16,56 @@ import Signup from './Signup';
  export default class App extends Component {
 
   state = {
-    animals: [],
-    FavoriteAnimals: [],
-    sort: "", 
-    filter: "All", 
+    // animals: [],
+    // FavoriteAnimals: [],
+    // sort: "", 
+    // filter: "All", 
     isLoggedIn: false, 
     user: {}
 }
 
-componentDidMount(){
-    fetch('http://localhost:3001/animals')
-    .then(res => res.json())
-    .then(data => {
-       this.setState({
-           animals: data
-        })
-})}
+// componentDidMount(){
+//     fetch('http://localhost:3001/animals')
+//     .then(res => res.json())
+//     .then(data => {
+//        this.setState({
+//            animals: data
+//         })
+// })}
 
-likeAnimal = (animal) => {
-    if(!this.state.FavoriteAnimals.includes(animal)){
-  this.setState({
-  FavoriteAnimals: [...this.state.FavoriteAnimals, animal]})
-  } else {
-    alert("You can't like the same animal twice")
-  }
-}
+// likeAnimal = (animal) => {
+//     if(!this.state.FavoriteAnimals.includes(animal)){
+//   this.setState({
+//   FavoriteAnimals: [...this.state.FavoriteAnimals, animal]})
+//   } else {
+//     alert("You can't like the same animal twice")
+//   }
+// }
 
-changeSort = sort => this.setState({sort})
+// changeSort = sort => this.setState({sort})
  
-changeFilter = filter => this.setState({filter})
+// changeFilter = filter => this.setState({filter})
 
-displayAnimals = () => {
-  /// make a copy of all the animals in the state 
-  let displayAnimals = [...this.state.animals]
+// displayAnimals = () => {
+//   /// make a copy of all the animals in the state 
+//   let displayAnimals = [...this.state.animals]
 
 
-  /// check to see if filter is "all"
-  ///if it isnt, then we need to run some filter
-  if(this.state.filter !== "All"){
-    displayAnimals = displayAnimals.filter(animal => animal.name == this.state.filter )
-  }
+//   /// check to see if filter is "all"
+//   ///if it isnt, then we need to run some filter
+//   if(this.state.filter !== "All"){
+//     displayAnimals = displayAnimals.filter(animal => animal.name == this.state.filter )
+//   }
 
-  ///once the array is filtered 
-  ///check to see what sort by, then sort by that 
-  // if(this.state.sort === "dog"){
-  //   return displayAnimals.sort((animal1, animal2) => animal1.name > animal2.name? 1 : -1)
-  // } else if (this.state.sort === "cat"){
-  //   return displayAnimals.sort((animal1, animal2) => animal1.name > animal2.name? 1 : -1)
-  // } else {
-    return displayAnimals
-  }
+//   ///once the array is filtered 
+//   ///check to see what sort by, then sort by that 
+//   // if(this.state.sort === "dog"){
+//   //   return displayAnimals.sort((animal1, animal2) => animal1.name > animal2.name? 1 : -1)
+//   // } else if (this.state.sort === "cat"){
+//   //   return displayAnimals.sort((animal1, animal2) => animal1.name > animal2.name? 1 : -1)
+//   // } else {
+//     return displayAnimals
+//   }
 
 
   componentDidMount() {
@@ -119,9 +119,8 @@ componentWillMount() {
        
        
        <Navbar/> 
-       <SearchBar changeFilter={this.changeFilter} sort={this.state.sort} changeSort={this.changeSort}/>
-       <Home AllAnimals={this.displayAnimals()} FavoriteAnimals={this.likeAnimal} /> 
-       <FavoriteAnimals FavoriteAnimals={this.state.FavoriteAnimals}/> 
+       {/* <SearchBar changeFilter={this.changeFilter} sort={this.state.sort} changeSort={this.changeSort}/> */}
+       <Home />
     
     </div>
   );

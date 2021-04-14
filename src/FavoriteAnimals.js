@@ -2,18 +2,15 @@ import React, { Component } from "react";
 import FavoriteCard from './FavoriteCard'
 
 
-class FavoriteAnimals extends Component{
+const FavoriteAnimals = ({FavoriteAnimals}) => {
 
-
-    render (){
+ console.log(FavoriteAnimals)
+    
         return(
             <div>
-                {this.props.FavoriteAnimals.map(animal => <FavoriteCard key={animal.id} animal={animal}/>)}
+                {FavoriteAnimals.map(animal => <FavoriteCard key={animal.id} animal={animal}/>)}
             </div>
         )
     }
-
-
-}
 
 export default FavoriteAnimals; 

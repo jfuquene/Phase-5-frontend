@@ -4,7 +4,7 @@ const SearchBar = ({changeFilter, sort, changeSort }) => {
 
     return(
         <div>
-            {/* <strong>Sort by:</strong>
+            <strong>Sort by:</strong>
             <label>
                 <input type="radio" value="dog" checked={sort === "dog"} onChange={(e) => changeSort(e.target.value)}/>Dog
             </label>
@@ -12,14 +12,12 @@ const SearchBar = ({changeFilter, sort, changeSort }) => {
                 <input type="radio" value="cat" checked={sort === "cat"} onChange={(e) => changeSort(e.target.value)}/>Cat
             </label>
 
-            <br/> */}
+            <br/>
             <label>
                 <strong>What animal are you looking for:</strong>
                 <select onChange={(e) => changeFilter(e.target.value)}>
                     <option value="dog">Dog's</option>
                     <option value="cat">Cat's</option>
-                    <option value="horse">Horse</option>
-                    <option value="tiger">Tiger's</option>
                     <option value="All">All Animals</option>
                 </select>
 
