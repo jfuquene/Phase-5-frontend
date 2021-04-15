@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import {Link} from 'react-router-dom'
+import Home from './Home'
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -42,7 +43,7 @@ handleChange = (event) => {
   };
 
   redirect = () => {
-    this.props.history.push('/')
+    this.props.history.push('/home')
   }
 
   handleErrors = () => {

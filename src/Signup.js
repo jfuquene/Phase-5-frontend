@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import Home from './Home'
 class Signup extends Component {
   constructor(props) {
     super(props);
@@ -44,7 +45,7 @@ handleSubmit = (event) => {
   };
 
   redirect = () => {
-    this.props.history.push('/')
+    this.props.history.push('/home')
   }
   handleErrors = () => {
     return (

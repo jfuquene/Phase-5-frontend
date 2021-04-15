@@ -111,16 +111,19 @@ componentWillMount() {
        {/* <Login /> */}
        <BrowserRouter>
        <Switch>
+         <div>
          <Route exact path='/' render={props => (<Landing {...props} loggedInStatus={this.state.isLoggedIn}/>)}/>
          <Route exact path='/login' render={props => (<Login {...props} handleLogin={this.handleLogin} loggedINStatus={this.state.isLoggedIn}/>)}/>
          <Route exact path='/signup' render={props => (<Signup {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>)}/>
+         <Navbar />
+         <Home exact path='/home' component={Home}/> 
+         </div>
        </Switch>
        </BrowserRouter>
        
        
-       <Navbar/> 
+  
        {/* <SearchBar changeFilter={this.changeFilter} sort={this.state.sort} changeSort={this.changeSort}/> */}
-       <Home />
     
     </div>
   );
