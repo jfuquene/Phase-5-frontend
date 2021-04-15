@@ -4,7 +4,7 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
 const AnimalCard = ({animal, FavoriteAnimals }) => {
-    console.log(animal)
+    
     return(
         
                 <Card  style={{ width: '18rem' }}>

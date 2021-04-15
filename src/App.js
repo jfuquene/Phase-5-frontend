@@ -99,13 +99,13 @@ handleLogout = () => {
   user: {}
   })
 }
-componentWillMount() {
+UNSAFE_componentWillMount() {
   return this.props.loggedInStatus ? this.redirect() : null
 }
 
 
   render(){
-  
+    
   return (
     <div className="App">
        {/* <Login /> */}
@@ -115,7 +115,7 @@ componentWillMount() {
          <Route exact path='/' render={props => (<Landing {...props} loggedInStatus={this.state.isLoggedIn}/>)}/>
          <Route exact path='/login' render={props => (<Login {...props} handleLogin={this.handleLogin} loggedINStatus={this.state.isLoggedIn}/>)}/>
          <Route exact path='/signup' render={props => (<Signup {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>)}/>
-         <Navbar />
+         <Navbar user={this.state.user}/>
          <Home exact path='/home' component={Home}/> 
          </div>
        </Switch>

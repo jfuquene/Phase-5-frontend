@@ -4,7 +4,7 @@ import FavoriteCard from './FavoriteCard'
 
 const FavoriteAnimals = ({FavoriteAnimals}) => {
 
- console.log(FavoriteAnimals)
+
     
         return(
             <div>
