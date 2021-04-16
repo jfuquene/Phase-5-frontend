@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import FavoriteCard from './FavoriteCard'
 
 
-const FavoriteAnimals = ({FavoriteAnimals}) => {
+const FavoriteAnimals = ({favoriteAnimals, unlikeAnimal}) => {
 
 
-    
+    // console.log(favoriteAnimals)
         return(
             <div>
-                {FavoriteAnimals.map(animal => <FavoriteCard key={animal.id} animal={animal}/>)}
+                {/* {favoriteAnimals.map(animal => <FavoriteCard key={animal.id} animal={animal} unlikeAnimal={unlikeAnimal}/>)} */}
             </div>
         )
     }

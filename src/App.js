@@ -10,6 +10,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Landing from "./Landing";
 import Login from './Login';
 import Signup from './Signup';
+import Donate from './Donate'
 
 
 
@@ -21,7 +22,7 @@ import Signup from './Signup';
     // sort: "", 
     // filter: "All", 
     isLoggedIn: false, 
-    user: {}
+    user: []
 }
 
 // componentDidMount(){
@@ -105,7 +106,7 @@ UNSAFE_componentWillMount() {
 
 
   render(){
-    
+    console.log(this.state.user)
   return (
     <div className="App">
        {/* <Login /> */}
@@ -116,7 +117,9 @@ UNSAFE_componentWillMount() {
          <Route exact path='/login' render={props => (<Login {...props} handleLogin={this.handleLogin} loggedINStatus={this.state.isLoggedIn}/>)}/>
          <Route exact path='/signup' render={props => (<Signup {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>)}/>
          <Navbar user={this.state.user}/>
-         <Home exact path='/home' component={Home}/> 
+         <Route path='/home' component={Home}/> 
+         <Route path='/donate' component={Donate}/>
+         <Route path='/favoriteAnimals' component={FavoriteAnimals}/>
          </div>
        </Switch>
        </BrowserRouter>

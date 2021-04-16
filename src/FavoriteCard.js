@@ -3,7 +3,7 @@ import CardColumns from 'react-bootstrap/CardDeck';
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
-const FavoriteCard = ({animal}) => {
+const FavoriteCard = ({animal, unlikeAnimal}) => {
     
         return(
           <Card  style={{ width: '18rem' }}>
@@ -14,7 +14,7 @@ const FavoriteCard = ({animal}) => {
           Some quick example text to build on the card title and make up the bulk of
           the card's content. 
           </Card.Text>
-          <Button variant="primary">Unlike</Button>
+          <Button variant="primary" onClick={(e) =>unlikeAnimal(e)}>Unlike</Button>
           </Card.Body>
           </Card>      
         )

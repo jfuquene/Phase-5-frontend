@@ -36,6 +36,15 @@ class Home extends Component {
       }
     }
 
+    unlikeAnimal = (e) => {
+      var arr = [...this.state.FavoriteAnimals];
+      var index = arr.indexOf(e.target.value)
+      if (index !== -1){
+        arr.splice(index, 1);
+        this.setState({FavoriteAnimals: arr})
+      }
+    }
+
     displayAnimals = () => {
         
         let displayAnimals = [...this.state.animals]
@@ -53,11 +62,13 @@ class Home extends Component {
 
     
 render(){
-    return(
+  console.log(this.state.FavoriteAnimals)
+    
+  return(
         <div>
             <SearchBar changeFilter={this.changeFilter} sort={this.state.sort} changeSort={this.changeSort}/>
             <AnimalContainer animals={this.displayAnimals()} FavoriteAnimals={this.likeAnimal} /> 
-            <FavoriteAnimals FavoriteAnimals={this.state.FavoriteAnimals}/>
+            <FavoriteAnimals favoriteAnimals={this.state.FavoriteAnimals} unlikeAnimal={this.unlikeAnimal}/>
         </div>
     )
 }
