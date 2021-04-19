@@ -52,14 +52,14 @@ class Home extends Component {
         if(this.state.filter !== "All"){
           displayAnimals = displayAnimals.filter(animal => animal.species == this.state.filter )
         }
-        // if(this.state.sort === "dog"){
-        //   return displayAnimals.sort((animal1, animal2) => animal1.name > animal2.name? 1 : -1)
-        // } else if (this.state.sort === "cat"){
-        //   return displayAnimals.sort((animal1, animal2) => animal1.name > animal2.name? 1 : -1)
-        // } else {
+        if(this.state.sort === "dog"){
+          return displayAnimals.sort((animal1, animal2) => animal1.species > animal2.species? 1 : -1)
+        } else if (this.state.sort === "cat"){
+          return displayAnimals.sort((animal1, animal2) => animal1.species > animal2.species? 1 : -1)
+        } else {
           return displayAnimals
         }
-
+      }
     
 render(){
   console.log(this.state.FavoriteAnimals)

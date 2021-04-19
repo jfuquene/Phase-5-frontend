@@ -11,62 +11,19 @@ import Landing from "./Landing";
 import Login from './Login';
 import Signup from './Signup';
 import Donate from './Donate'
+import Resources from './Resources'
+import User from './User'
+import Logout from './Logout'
 
 
 
  export default class App extends Component {
 
   state = {
-    // animals: [],
-    // FavoriteAnimals: [],
-    // sort: "", 
-    // filter: "All", 
     isLoggedIn: false, 
     user: []
 }
 
-// componentDidMount(){
-//     fetch('http://localhost:3001/animals')
-//     .then(res => res.json())
-//     .then(data => {
-//        this.setState({
-//            animals: data
-//         })
-// })}
-
-// likeAnimal = (animal) => {
-//     if(!this.state.FavoriteAnimals.includes(animal)){
-//   this.setState({
-//   FavoriteAnimals: [...this.state.FavoriteAnimals, animal]})
-//   } else {
-//     alert("You can't like the same animal twice")
-//   }
-// }
-
-// changeSort = sort => this.setState({sort})
- 
-// changeFilter = filter => this.setState({filter})
-
-// displayAnimals = () => {
-//   /// make a copy of all the animals in the state 
-//   let displayAnimals = [...this.state.animals]
-
-
-//   /// check to see if filter is "all"
-//   ///if it isnt, then we need to run some filter
-//   if(this.state.filter !== "All"){
-//     displayAnimals = displayAnimals.filter(animal => animal.name == this.state.filter )
-//   }
-
-//   ///once the array is filtered 
-//   ///check to see what sort by, then sort by that 
-//   // if(this.state.sort === "dog"){
-//   //   return displayAnimals.sort((animal1, animal2) => animal1.name > animal2.name? 1 : -1)
-//   // } else if (this.state.sort === "cat"){
-//   //   return displayAnimals.sort((animal1, animal2) => animal1.name > animal2.name? 1 : -1)
-//   // } else {
-//     return displayAnimals
-//   }
 
 
   componentDidMount() {
@@ -113,20 +70,25 @@ UNSAFE_componentWillMount() {
        <BrowserRouter>
        <Switch>
          <div>
-         <Route exact path='/' render={props => (<Landing {...props} loggedInStatus={this.state.isLoggedIn}/>)}/>
-         <Route exact path='/login' render={props => (<Login {...props} handleLogin={this.handleLogin} loggedINStatus={this.state.isLoggedIn}/>)}/>
-         <Route exact path='/signup' render={props => (<Signup {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>)}/>
+         <Route path='/' render={props => (<Landing {...props} loggedInStatus={this.state.isLoggedIn}/>)}/>
+         <Route path='/login' render={props => (<Login {...props} handleLogin={this.handleLogin} loggedINStatus={this.state.isLoggedIn}/>)}/>
+         <Route path='/signup' render={props => (<Signup {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>)}/>
+        
          <Navbar user={this.state.user}/>
          <Route path='/home' component={Home}/> 
          <Route path='/donate' component={Donate}/>
          <Route path='/favoriteAnimals' component={FavoriteAnimals}/>
+         <Route path='/resources' component={Resources}/>
+         <Route path='/user' component={User}/>
+         <Route path='/logout' render={props => (<Logout {...props} loggedInStatus={this.state.isLoggedIn}/>)}/>
+  
          </div>
        </Switch>
        </BrowserRouter>
        
        
   
-       {/* <SearchBar changeFilter={this.changeFilter} sort={this.state.sort} changeSort={this.changeSort}/> */}
+       
     
     </div>
   );

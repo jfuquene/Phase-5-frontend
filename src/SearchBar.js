@@ -4,13 +4,13 @@ const SearchBar = ({changeFilter, sort, changeSort }) => {
 
     return(
         <div>
-            <strong>Sort by:</strong>
+            {/* <strong>Sort by:</strong>
             <label>
                 <input type="radio" value="dog" checked={sort === "dog"} onChange={(e) => changeSort(e.target.value)}/>Dog
             </label>
             <label>
                 <input type="radio" value="cat" checked={sort === "cat"} onChange={(e) => changeSort(e.target.value)}/>Cat
-            </label>
+            </label> */}
 
             <br/>
             <label>
