@@ -9,7 +9,7 @@ console.log(animals)
         return(
             <div>
              {/* <input type="text" className="input" placeholder="Search..." /> */}
-               {animals.map(animal => <AnimalCard key={animal.id} animal={animal} FavoriteAnimals={FavoriteAnimals} />)}
+               {animals.map(animal => <AnimalCard  key={animal.id} animal={animal} FavoriteAnimals={FavoriteAnimals} />)}
             </div>
         )
     }

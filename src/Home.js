@@ -2,6 +2,7 @@ import React, {Component } from 'react'
 import AnimalContainer from './AnimalContainer';
 import SearchBar from './SearchBar'
 import FavoriteAnimals from './FavoriteAnimals'
+import Figure from 'react-bootstrap/Figure'
 
 class Home extends Component {
 
@@ -21,9 +22,9 @@ class Home extends Component {
             })
     })};
 
-    changeSort = sort => this.setState({sort})
+    // changeSort = sort => this.setState({sort})
  
-    changeFilter = filter => this.setState({filter})
+    // changeFilter = filter => this.setState({filter})
     
 
 
@@ -36,13 +37,13 @@ class Home extends Component {
       }
     }
 
-    unlikeAnimal = (e) => {
-      var arr = [...this.state.FavoriteAnimals];
-      var index = arr.indexOf(e.target.value)
-      if (index !== -1){
-        arr.splice(index, 1);
-        this.setState({FavoriteAnimals: arr})
-      }
+    // unlikeAnimal = (animal) => {
+    //   this.setState({FavoriteAnimals: [...this.state.FavoriteAnimals].filter(animal => animal !== animal)})
+    // }
+    
+    handleDelete = (animal) => { 
+      let newAnimal = this.state.FavoriteAnimals.filter(favAnimal => favAnimal !== animal)
+      this.setState({ FavoriteAnimals: newAnimal})
     }
 
     displayAnimals = () => {
@@ -60,15 +61,36 @@ class Home extends Component {
           return displayAnimals
         }
       }
+
     
 render(){
   console.log(this.state.FavoriteAnimals)
     
   return(
         <div>
+                      {/* <Figure>
+            <Figure.Image
+              width={700}
+              height={180}
+              alt="171x180"
+              src="https://www.gerberlife.com/blog/wp-content/uploads/family-dog.jpg"
+            />
+            <Figure.Caption>
+             
+            </Figure.Caption>
+          </Figure> */}
+              <div class="card bg-light text-black" style={{ width: '34rem' }} >
+                <img src="https://www.gerberlife.com/blog/wp-content/uploads/family-dog.jpg" class="card-img" alt="..."/>
+                <div class="card-img-overlay">
+                 <h5 class="card-title">Begin your Journey here</h5>
+                <p class="card-text">Find the your families new Best Friend</p>
+                </div>
+                </div>
+         
+        
             <SearchBar changeFilter={this.changeFilter} sort={this.state.sort} changeSort={this.changeSort}/>
             <AnimalContainer animals={this.displayAnimals()} FavoriteAnimals={this.likeAnimal} /> 
-            <FavoriteAnimals favoriteAnimals={this.state.FavoriteAnimals} unlikeAnimal={this.unlikeAnimal}/>
+            <FavoriteAnimals favoriteAnimals={this.state.FavoriteAnimals} unlikeAnimal={this.handleDelete}/>
         </div>
     )
 }

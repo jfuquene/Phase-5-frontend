@@ -8,7 +8,7 @@ const AnimalCard = ({animal, FavoriteAnimals }) => {
     
     
     return(
-        
+        <CardDeck>
                 <Card  style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={animal.photos} />
                 <Card.Body>
@@ -22,6 +22,7 @@ const AnimalCard = ({animal, FavoriteAnimals }) => {
                 <Button onClick={ () =>FavoriteAnimals(animal)} variant="danger">Like</Button>
                 </Card.Body>
                 </Card>
+        </CardDeck>
     
            
         )      
