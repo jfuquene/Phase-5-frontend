@@ -22,9 +22,9 @@ class Home extends Component {
             })
     })};
 
-    // changeSort = sort => this.setState({sort})
+    changeSort = sort => this.setState({sort})
  
-    // changeFilter = filter => this.setState({filter})
+    changeFilter = filter => this.setState({filter})
     
 
 
@@ -36,10 +36,6 @@ class Home extends Component {
         alert("You can't like the same animal twice")
       }
     }
-
-    // unlikeAnimal = (animal) => {
-    //   this.setState({FavoriteAnimals: [...this.state.FavoriteAnimals].filter(animal => animal !== animal)})
-    // }
     
     handleDelete = (animal) => { 
       let newAnimal = this.state.FavoriteAnimals.filter(favAnimal => favAnimal !== animal)

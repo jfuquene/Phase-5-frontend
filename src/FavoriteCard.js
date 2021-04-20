@@ -7,7 +7,7 @@ const FavoriteCard = ({animal, unlikeAnimal}) => {
     
         return(
           <Card  style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={animal.photos} />
+          <Card.Img variant="top" top width="100" src={animal.photos} />
           <Card.Body>
           <Card.Title>{animal.name}</Card.Title>
           <Card.Text>
