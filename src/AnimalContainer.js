@@ -17,14 +17,18 @@ class AnimalContainer extends Component {
           animal: animal
         });
       }
+      clickBack = () => {
+          this.setState({
+              clicked: false
+          })
+      }
     render(){
         
         return(
             <div>
              {/* <input type="text" className="input" placeholder="Search..." /> */}
-             {this.state.clicked ? <SpecificCard animal={this.state.animal} /> : this.props.animals.map(animal => <AnimalCard  key={animal.id} animal={animal} FavoriteAnimals={this.props.FavoriteAnimals} clickedAnimal={this.clickedAnimal} />)}
-{/*              
-               {this.props.animals.map(animal => <AnimalCard  key={animal.id} animal={animal} FavoriteAnimals={this.props.FavoriteAnimals} clickedAnimal={this.clickedAnimal} />)}  */}
+             {this.state.clicked ? <SpecificCard animal={this.state.animal} FavoriteAnimal={this.props.FavoriteAnimal} clickBack={this.clickBack} /> : this.props.animals.map(animal => <AnimalCard  key={animal.id} animal={animal} FavoriteAnimals={this.props.FavoriteAnimals} clickedAnimal={this.clickedAnimal} />)}
+
             </div>
         )
     }

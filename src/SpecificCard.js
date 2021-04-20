@@ -1,8 +1,8 @@
 import React from 'react'
 import './card-style.css'
+import Button from 'react-bootstrap/Button'
 
-
-const SpecificCard = ({animal}) => {
+const SpecificCard = ({animal, FavoriteAnimals, clickBack}) => {
 
     return(
       <div className = "card text-center shadow ">
@@ -24,7 +24,8 @@ const SpecificCard = ({animal}) => {
                     <br></br>
                     {animal.size}
                 </p>
-                <a href="#" className="btn btn-outline-success"> go anywhere</a>
+                <a href="#" className="btn btn-outline-success" onClick={() => clickBack()}> Go back </a>
+                <Button variant="danger" onClick={ () =>FavoriteAnimals(animal)}> Like</Button>
             </div>
          </div>   
 

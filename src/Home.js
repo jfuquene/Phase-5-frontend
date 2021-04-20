@@ -59,12 +59,7 @@ class Home extends Component {
         // } else {
           return displayAnimals
         }
-    //  clickedAnimal = (animal) =>{
-    //    this.setState({
-    //      clicked: true
-    //    });
-    //  }
-    
+   
 render(){
   // console.log(this.state.FavoriteAnimals
   return(
