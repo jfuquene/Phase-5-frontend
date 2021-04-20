@@ -47,12 +47,12 @@ class Home extends Component {
         let displayAnimals = [...this.state.animals]
       
         if(this.state.filter !== "All"){
-          displayAnimals = displayAnimals.filter(animal => animal.species == this.state.filter )
+          displayAnimals = displayAnimals.filter(animal => animal.group == this.state.filter )
         }
         if(this.state.sort === "dog"){
-          return displayAnimals.sort((animal1, animal2) => animal1.species > animal2.species? 1 : -1)
+          return displayAnimals.sort((animal1, animal2) => animal1.group > animal2.group? 1 : -1)
         } else if (this.state.sort === "cat"){
-          return displayAnimals.sort((animal1, animal2) => animal1.species > animal2.species? 1 : -1)
+          return displayAnimals.sort((animal1, animal2) => animal1.group > animal2.group? 1 : -1)
         } else {
           return displayAnimals
         }
