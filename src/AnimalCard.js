@@ -3,14 +3,14 @@ import CardDeck from 'react-bootstrap/CardDeck';
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
-const AnimalCard = ({animal, FavoriteAnimals }) => {
+const AnimalCard = ({animal, FavoriteAnimals, clickedAnimal}) => {
 
     
     
     return(
             <div class="col-sm-4 d-flex pb-3">
                 <Card  style={{ width: '18rem' }} class="card card-block">
-                <Card.Img variant="top" src={animal.photos} />
+                <Card.Img variant="top" src={animal.photos} onClick={() => clickedAnimal(animal)}/>
                 <Card.Body>
                 <Card.Title>{animal.name} - age:{animal.age}</Card.Title>
                 <Card.Text>

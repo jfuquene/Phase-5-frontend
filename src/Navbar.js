@@ -1,12 +1,9 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Nav from 'react-bootstrap/Nav'
-import Home from './Home'
 import { NavLink } from 'react-router-dom';
 import NavDropdown from 'react-bootstrap/NavDropdown'
-import Donate from './Donate'
-import User from './User';
-import Logout from './Logout'
+
 
 
 
