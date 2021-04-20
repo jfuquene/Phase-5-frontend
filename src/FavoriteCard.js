@@ -11,8 +11,7 @@ const FavoriteCard = ({animal, unlikeAnimal}) => {
           <Card.Body>
           <Card.Title>{animal.name}</Card.Title>
           <Card.Text>
-          Some quick example text to build on the card title and make up the bulk of
-          the card's content. 
+          {animal.description}
           </Card.Text>
           <Button variant="primary" onClick={() =>unlikeAnimal(animal)}>Unlike</Button>
           </Card.Body>

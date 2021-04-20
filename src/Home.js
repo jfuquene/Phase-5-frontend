@@ -77,7 +77,7 @@ render(){
 
 
             <AnimalContainer animals={this.displayAnimals()} FavoriteAnimals={this.likeAnimal} clickAnimal={this.clickedAnimal}/> 
-            {/* {this.state.clicked ? <SpecificCard  /> : null} */}
+           
             <FavoriteAnimals favoriteAnimals={this.state.FavoriteAnimals} unlikeAnimal={this.handleDelete}/>
         </div>
     )
