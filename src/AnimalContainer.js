@@ -27,7 +27,7 @@ class AnimalContainer extends Component {
         return(
             <div>
              {/* <input type="text" className="input" placeholder="Search..." /> */}
-             {this.state.clicked ? <SpecificCard animal={this.state.animal} FavoriteAnimals={this.props.FavoriteAnimals} clickBack={this.clickBack} /> : this.props.animals.map(animal => <AnimalCard  key={animal.id} animal={animal} FavoriteAnimals={this.props.FavoriteAnimals} clickedAnimal={this.clickedAnimal} />)}
+             {this.state.clicked ? <SpecificCard animal={this.state.animal} favoriteAnimals={this.props.favoriteAnimals} clickBack={this.clickBack} /> : this.props.animals.map(animal => <AnimalCard  key={animal.id} animal={animal} favoriteAnimals={this.props.favoriteAnimals} clickedAnimal={this.clickedAnimal} />)}
 
             </div>
         )

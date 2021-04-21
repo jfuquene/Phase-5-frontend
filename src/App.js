@@ -14,6 +14,7 @@ import Donate from './Donate'
 import Resources from './Resources'
 import User from './User'
 import Logout from './Logout'
+import FavoriteCard from "./FavoriteCard";
 
 
 
@@ -21,8 +22,19 @@ import Logout from './Logout'
 
   state = {
     isLoggedIn: false, 
-    user: []
+    user: [],
+    favoriteAnimals: []
 }
+setFavorite = (animal) => {
+  if(!this.state.favoriteAnimals.includes(animal)){
+    axios.post('http://localhost:3001/favorite_animals', {user_id: this.state.user.id, animal_id: animal.id})
+    .then(response => this.setState({
+      favoriteAnimals: [...this.state.favoriteAnimals, animal]
+    })) 
+  } else {
+    alert("You can't like the same animal twice")
+  }
+  }
 
 
 
@@ -61,7 +73,6 @@ UNSAFE_componentWillMount() {
   return this.props.loggedInStatus ? this.redirect() : null
 }
 
-
   render(){
     console.log(this.state.user)
   return (
@@ -75,9 +86,9 @@ UNSAFE_componentWillMount() {
          <Route path='/signup' render={props => (<Signup {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn}/>)}/>
         
          <Navbar user={this.state.user}/>
-         <Route path='/home' component={Home}/> 
+         <Route path='/home' component={() => <Home user={this.state.user} setFavorite={this.setFavorite}/>} />
          <Route path='/donate' component={Donate}/>
-         <Route path='/favoriteAnimals' component={FavoriteAnimals}/>
+         <Route path='/favoriteAnimals' component={() => <FavoriteAnimals favoriteAnimals={this.state.favoriteAnimals}/>} />
          <Route path='/resources' component={Resources}/>
          <Route path='/user' component={User}/>
          <Route path='/logout' render={props => (<Logout {...props} loggedInStatus={this.state.isLoggedIn}/>)}/>

@@ -3,7 +3,7 @@ import CardDeck from 'react-bootstrap/CardDeck';
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 
-const AnimalCard = ({animal, FavoriteAnimals, clickedAnimal}) => {
+const AnimalCard = ({animal, favoriteAnimals, clickedAnimal}) => {
 
     
     
@@ -19,7 +19,7 @@ const AnimalCard = ({animal, FavoriteAnimals, clickedAnimal}) => {
                 <Card.Text>
                 {animal.description}
                 </Card.Text>
-                <Button onClick={ () =>FavoriteAnimals(animal)} variant="danger">Like</Button>
+                <Button onClick={ () =>favoriteAnimals(animal)} variant="danger">Like</Button>
                 </Card.Body>
                 </Card>
             </div>

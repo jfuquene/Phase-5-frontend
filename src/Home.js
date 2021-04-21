@@ -4,12 +4,13 @@ import SearchBar from './SearchBar'
 import FavoriteAnimals from './FavoriteAnimals'
 import Figure from 'react-bootstrap/Figure'
 import SpecificCard from './SpecificCard'
+import axios from 'axios';
+import User from './User';
 
 class Home extends Component {
 
     state = {
         animals: [],
-        FavoriteAnimals: [],
         sort: "", 
         filter: "All",
     };
@@ -32,13 +33,10 @@ class Home extends Component {
 
 
     likeAnimal = (animal) => {
-        if(!this.state.FavoriteAnimals.includes(animal)){
-      this.setState({
-      FavoriteAnimals: [...this.state.FavoriteAnimals, animal]})
-      } else {
-        alert("You can't like the same animal twice")
-      }
+      
+   this.props.setFavorite(animal)
     }
+
     
     handleDelete = (animal) => { 
       let newAnimal = this.state.FavoriteAnimals.filter(favAnimal => favAnimal !== animal)
@@ -76,9 +74,9 @@ render(){
             <SearchBar changeFilter={this.changeFilter} sort={this.state.sort} changeSort={this.changeSort}/>
 
 
-            <AnimalContainer animals={this.displayAnimals()} FavoriteAnimals={this.likeAnimal} clickAnimal={this.clickedAnimal}/> 
+            <AnimalContainer animals={this.displayAnimals()} favoriteAnimals={this.likeAnimal} clickAnimal={this.clickedAnimal}/> 
            
-            <FavoriteAnimals favoriteAnimals={this.state.FavoriteAnimals} unlikeAnimal={this.handleDelete}/>
+            {/* <FavoriteAnimals favoriteAnimals={this.state.FavoriteAnimals} unlikeAnimal={this.handleDelete}/> */}
         </div>
     )
 }
