@@ -36,7 +36,10 @@ setFavorite = (animal) => {
   }
   }
 
-
+  handleDelete = (animal) => { 
+    let newAnimal = this.state.favoriteAnimals.filter(favAnimal => favAnimal !== animal)
+    this.setState({ favoriteAnimals: newAnimal})
+  }
 
   componentDidMount() {
     this.loginStatus()
@@ -75,9 +78,11 @@ UNSAFE_componentWillMount() {
 
   render(){
     console.log(this.state.user)
+  
+
   return (
     <div className="App">
-       {/* <Login /> */}
+       
        <BrowserRouter>
        <Switch>
          <div>
@@ -88,7 +93,7 @@ UNSAFE_componentWillMount() {
          <Navbar user={this.state.user}/>
          <Route path='/home' component={() => <Home user={this.state.user} setFavorite={this.setFavorite}/>} />
          <Route path='/donate' component={Donate}/>
-         <Route path='/favoriteAnimals' component={() => <FavoriteAnimals favoriteAnimals={this.state.favoriteAnimals}/>} />
+         <Route path='/favoriteAnimals' component={() => <FavoriteAnimals favoriteAnimals={this.state.favoriteAnimals} unlikeAnimal={this.handleDelete}/>} />
          <Route path='/resources' component={Resources}/>
          <Route path='/user' component={User}/>
          <Route path='/logout' render={props => (<Logout {...props} loggedInStatus={this.state.isLoggedIn}/>)}/>
@@ -105,3 +110,5 @@ UNSAFE_componentWillMount() {
   );
  }
 }
+
+

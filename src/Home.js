@@ -38,10 +38,7 @@ class Home extends Component {
     }
 
     
-    handleDelete = (animal) => { 
-      let newAnimal = this.state.FavoriteAnimals.filter(favAnimal => favAnimal !== animal)
-      this.setState({ FavoriteAnimals: newAnimal})
-    }
+  
 
     displayAnimals = () => {
         
@@ -59,7 +56,7 @@ class Home extends Component {
         }
    
 render(){
-  // console.log(this.state.FavoriteAnimals
+  
   return(
         <div>
               <div class="card bg-light text-black" style={{ width: '34rem' }} >
@@ -73,10 +70,10 @@ render(){
         
             <SearchBar changeFilter={this.changeFilter} sort={this.state.sort} changeSort={this.changeSort}/>
 
-
+            <div className="container">
             <AnimalContainer animals={this.displayAnimals()} favoriteAnimals={this.likeAnimal} clickAnimal={this.clickedAnimal}/> 
+            </div>
            
-            {/* <FavoriteAnimals favoriteAnimals={this.state.FavoriteAnimals} unlikeAnimal={this.handleDelete}/> */}
         </div>
     )
 }

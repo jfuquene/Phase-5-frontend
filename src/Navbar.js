@@ -9,7 +9,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 
 
 
-const Navbar = ({ changeToFavorite, changeToHome, user}) => {
+const Navbar = ({ user}) => {
 // console.log(user.username)
     return (
       <div>
@@ -24,14 +24,10 @@ const Navbar = ({ changeToFavorite, changeToHome, user}) => {
           <NavLink class="nav-link active" to='/user'>😀 Profile </NavLink>
         </li>
         <li class="nav-item">
-          {/* <NavLink class="nav-link active" to='/resources'>Resources</NavLink> */}
-          <NavDropdown title="Resources" id="nav-dropdown" class="nav-link" to='/resources'>
-        <NavDropdown.Item eventKey="4.1" class="nav-link active" href="http://localhost:3000/donate" to='/donate' >Donate</NavDropdown.Item>
-        <NavDropdown.Item eventKey="4.2">Helpful information on Pet adoption</NavDropdown.Item>
-        <NavDropdown.Item eventKey="4.3">Sign out</NavDropdown.Item>
-        <NavDropdown.Divider />
-        <NavDropdown.Item eventKey="4.4">Separated link</NavDropdown.Item>
-      </NavDropdown>
+        <NavLink class="nav-link active" to='/resources'>Resources </NavLink>
+        </li>
+        <li class="nav-item">
+        <NavLink class="nav-link active" href="http://localhost:3000/donate" to='/donate'>Donate</NavLink>
         </li>
         <li class="nav-item">
           <NavLink class="nav-link active" to='/Logout'>Log out </NavLink>
