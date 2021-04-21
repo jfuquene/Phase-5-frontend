@@ -1,10 +1,14 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import CardColumns from 'react-bootstrap/CardDeck';
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
+import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
 import './card-style.css'
 
 const FavoriteCard = ({animal, unlikeAnimal}) => {
+
+  const [selectedDate, setSelectedDate] = useState(null)
     
         return(
           <div className="container">
@@ -22,6 +26,20 @@ const FavoriteCard = ({animal, unlikeAnimal}) => {
                 {animal.description}
                 </Card.Text>
                 <Button onClick={ () =>unlikeAnimal(animal)} variant="primary">unlike</Button>
+                <Card.Text>
+                Would you like to pick out a date to visit {animal.name} in person?
+                <br></br>
+                <div>
+                  <DatePicker
+                    selected={selectedDate}
+                    onChange={date => setSelectedDate(date)}
+                    
+                    minDate={new Date()}
+                    isClearable
+                  />                  
+                </div>
+                </Card.Text>
+
                 </Card.Body>
                 </Card>
                 </div>
