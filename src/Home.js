@@ -7,12 +7,16 @@ import SpecificCard from './SpecificCard'
 import axios from 'axios';
 import User from './User';
 
+
 class Home extends Component {
+
+
 
     state = {
         animals: [],
-        sort: "", 
         filter: "All",
+        sort: ""
+
     };
 
 
@@ -29,6 +33,8 @@ class Home extends Component {
     changeSort = sort => this.setState({sort})
  
     changeFilter = filter => this.setState({filter})
+
+    
     
 
 
@@ -36,8 +42,7 @@ class Home extends Component {
    this.props.setFavorite(animal)
     }
 
-    
-  
+
 
     displayAnimals = () => {
         
@@ -46,19 +51,18 @@ class Home extends Component {
         if(this.state.filter !== "All"){
           displayAnimals = displayAnimals.filter(animal => animal.group == this.state.filter )
         }
-        // if(this.state.sort === "dog"){
-        //   return displayAnimals.sort((animal1, animal2) => animal1.group > animal2.group? 1 : -1)
-        // } else if (this.state.sort === "cat"){
-        //   return displayAnimals.sort((animal1, animal2) => animal1.group > animal2.group? 1 : -1)
-        // } else {
+        if(this.state.sort === "Alphabetically"){
+          return displayAnimals.sort((animal1, animal2) => animal1.name > animal2.name? 1 : -1)
+        } else {
           return displayAnimals
         }
+      }
    
 render(){
   
   return(
         <div>
-              <div class="card bg-light text-white" style={{position: 'fluid', top: 10, left: 150, right: 0, bottom: 90, justifyContent: 'center', alignItems: 'center'}} >
+              <div class="card bg-light text-white" style={{position: 'fluid', top: 10, left: 150, right: 0, bottom: 110, justifyContent: 'center', alignItems: 'center'}} >
                 <img src="https://www.gerberlife.com/blog/wp-content/uploads/family-dog.jpg" class="card-img" alt="..."/>
                 <div class="card-img-overlay">
                  <h1 class="card-title">Welcome to BudFinder!</h1>
