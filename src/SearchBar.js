@@ -16,11 +16,12 @@ const SearchBar = ({changeFilter, sort, changeSort}) => {
                 <strong>What animal are you looking for:</strong>
                 <select className='filter' onChange={(e) => changeFilter(e.target.value)}>
                     <option value="All">All Animals</option>
-                    <option value="Dog">Dog's</option>
+                    <option value="Bird">Bird's</option>
                     <option value="Cat">Cat's</option>
+                    <option value="Dog">Dog's</option>
                     <option value="Fish">Fish</option>
                     <option value="Turtle">Turtles</option>
-                    <option value="Bird">Bird's</option>
+
                 
                 </select>
 

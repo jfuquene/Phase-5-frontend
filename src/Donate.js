@@ -5,10 +5,27 @@ const Donate = () => {
 return(
 
     <div>
-        this is my page where people will be redirected to a donation page on petfinder.
-        <a href={link} target="/blank"> Click here</a>
-        to be redirected to a page to donate to to the PetFinder Foundation
+        <div className="grid">
+        <div className="box" style={{ margin: `50px`, display: `flex`, flexDirection: `row`, justifyContent: `center` }}>
+        <div className="e-card e-card-horizontal" style={{ width: `400px` }}>
+        <img src="https://149439182.v2.pressablecdn.com/wp-content/uploads/2017/04/Petfinder20thAnniv-683x1024.jpg" alt="Sample" style={{ height: `380px` }}/>
+        <div className="e-card-stacked">
+            <div className="e-card-header">
+                <div className="e-card-header-caption">
+                    <div className="e-card-header-title">Please Donate!</div>
+                </div>
+            </div>
+            <div className="e-card-content">
+                Please consider donating to agencies like PetFinder that donate their funds to shelters and other animal related organizations across the Country.
+                <a href={link} target="/blank"> Click here</a>
+                to be redirected to a page to donate to to the PetFinder Foundation
+            </div>
+        </div>
     </div>
+  </div>
+  </div>
+  </div>
+       
 ) 
 
 }

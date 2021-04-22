@@ -24,9 +24,6 @@ const Navbar = ({ user}) => {
           <NavLink class="nav-link active" to='/user'>😀 Profile </NavLink>
         </li>
         <li class="nav-item">
-        <NavLink class="nav-link active" to='/resources'>Resources </NavLink>
-        </li>
-        <li class="nav-item">
         <NavLink class="nav-link active" href="http://localhost:3000/donate" to='/donate'>Donate</NavLink>
         </li>
         <li class="nav-item">
@@ -39,3 +36,7 @@ const Navbar = ({ user}) => {
 
 }
 export default Navbar;
+
+{/* <li class="nav-item">
+        <NavLink class="nav-link active" to='/resources'>Resources </NavLink>
+        </li> */}

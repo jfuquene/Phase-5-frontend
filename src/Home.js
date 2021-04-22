@@ -63,11 +63,10 @@ render(){
   return(
         <div>
               <div class="card bg-light text-white" style={{position: 'fluid', top: 10, left: 150, right: 0, bottom: 110, justifyContent: 'center', alignItems: 'center'}} >
-                <img src="https://www.gerberlife.com/blog/wp-content/uploads/family-dog.jpg" class="card-img" alt="..."/>
+                <img src="https://imagesvc.meredithcorp.io/v3/mm/image?q=85&c=sc&poi=face&w=2000&h=1333&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F20%2F2019%2F12%2Fcats-dogs-portrait-1-1-2000.jpg" class="card-img" alt="..."/>
                 <div class="card-img-overlay">
                  <h1 class="card-title">Welcome to BudFinder!</h1>
                  <h2 className="card-text">Find the your families new Bud</h2>
-                <h3 class="card-text">Begin your search below:</h3>
                 </div>
                 </div>
          
