@@ -12,19 +12,8 @@ const User = () => {
            Add information to my account: 
        
         <Form>
-        <Form.Row>
-          <Form.Group as={Col} controlId="formGridEmail">
-            <Form.Label>Change Username:</Form.Label>
-            <Form.Control type="username" placeholder="Enter new Username" />
-          </Form.Group>
-      
-          <Form.Group as={Col} controlId="formGridPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" />
-          </Form.Group>
-        </Form.Row>
     
-        <h3>For a more personalize approach, enter your City, State and Zip code to see Animals in your area</h3>
+        <h4>For a more personalize approach, enter your City, State and Zip code to see Animals in your area</h4>
         <Form.Row>
           <Form.Group as={Col} controlId="formGridCity">
             <Form.Label>City</Form.Label>
@@ -97,7 +86,7 @@ const User = () => {
         </Form.Row>
          <label for="customRange1" class="form-label">How far are you willing to go</label>
           <input type="range" class="form-range" id="customRange1"></input>
-      
+        <br></br>
         <Button variant="primary" type="submit">
           Submit
         </Button>

@@ -11,20 +11,25 @@ const SpecificCard = ({animal, favoriteAnimals, clickBack}) => {
             </div>
             <div className="card-body text-dark">
                 <h4 className="card-title">{animal.name}</h4>
-                <p className="card-text text-secondary">
-                    {animal.description}
-                    <br></br>
-                    {animal.gender}
-                    <br></br>
-                    {animal.age}
-                    <br></br>
-                    {animal.environment}
-                    <br></br>
-                    {animal.status}
-                    <br></br>
-                    {animal.size}
+                <p className="card-text text-secondary" >
+                    Description: {animal.description}
+                    <br></br><br></br>
+                    Age: {animal.age}
+                    <br></br><br></br>
+                    Breed: {animal.breeds}
+                    <br></br><br></br>
+                    Gender :{animal.gender}
+                    <br></br><br></br>
+                    Environment: {animal.environment}
+                    <br></br><br></br>
+                    Adoption Status: {animal.status}
+                    <br></br><br></br>
+                    Animal Size: {animal.size}
+                    <br></br><br></br>
+                    Animal Location: {animal.location}
+                
                 </p>
-                <a href="#" className="btn btn-outline-success" onClick={() => clickBack()}> Go back </a>
+                <a href="#" className="btn btn-outline-success" onClick={() => clickBack()}> Back Home </a>
                 <Button variant="danger" onClick={ () =>favoriteAnimals(animal)}> Like</Button>
             </div>
          </div>   

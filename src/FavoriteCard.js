@@ -17,14 +17,22 @@ const FavoriteCard = ({animal, unlikeAnimal}) => {
             <div class="col-sm-4 d-flex pb-3">
                 <Card className="card" style={{ width: '30rem' }} class="card card-block">
                 <Card.Img className="card_img" variant="top" src={animal.photos}/>
-                <Card.Body>
-                <Card.Title>{animal.name} - age:{animal.age}</Card.Title>
-                <Card.Text>
-                {animal.gender}
-                </Card.Text>
-                <Card.Text>
-                {animal.description}
-                </Card.Text>
+                <h4 className="card-title">{animal.name}</h4>
+                Description: {animal.description}
+                    <br></br><br></br>
+                    Age: {animal.age}
+                    <br></br><br></br>
+                    Breed: {animal.breeds}
+                    <br></br><br></br>
+                    Gender :{animal.gender}
+                    <br></br><br></br>
+                    Environment: {animal.environment}
+                    <br></br><br></br>
+                    Adoption Status: {animal.status}
+                    <br></br><br></br>
+                    Animal Size: {animal.size}
+                    <br></br><br></br>
+                    Animal Location: {animal.location} 
                 <Button onClick={ () =>unlikeAnimal(animal)} variant="primary">unlike</Button>
                 <Card.Text>
                 Would you like to pick out a date to visit {animal.name} in person?
@@ -40,7 +48,7 @@ const FavoriteCard = ({animal, unlikeAnimal}) => {
                 </div>
                 </Card.Text>
 
-                </Card.Body>
+  
                 </Card>
                 </div>
                 </div>

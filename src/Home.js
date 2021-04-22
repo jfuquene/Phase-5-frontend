@@ -61,8 +61,9 @@ render(){
               <div class="card bg-light text-white" style={{position: 'fluid', top: 10, left: 150, right: 0, bottom: 90, justifyContent: 'center', alignItems: 'center'}} >
                 <img src="https://www.gerberlife.com/blog/wp-content/uploads/family-dog.jpg" class="card-img" alt="..."/>
                 <div class="card-img-overlay">
-                 <h1 class="card-title">Begin your Journey Here! </h1>
-                <h4 class="card-text">Find the your families new Best Friend</h4>
+                 <h1 class="card-title">Welcome to BudFinder!</h1>
+                 <h2 className="card-text">Find the your families new Bud</h2>
+                <h3 class="card-text">Begin your search below:</h3>
                 </div>
                 </div>
          
