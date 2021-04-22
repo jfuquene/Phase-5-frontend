@@ -36,4 +36,6 @@
     transform: rotate(360deg);
   }
 }
-
+.rbs_gallery_button {
+  background-color: rgba(255, 0, 0, 0) !important;
+}

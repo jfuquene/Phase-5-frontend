@@ -87,3 +87,24 @@
     box-sizing: border-box;
     margin-top:15px;
 }
+
+.filter {
+    border: 1px solid #007600;
+    color: #c02424;
+    padding: 0.75em 1.5em;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    outline: none;
+    
+    background: linear-gradient(#009000, #007600);
+    
+    &:hover {
+      -webkit-filter: brightness(120%);
+      filter: brightness(120%);
+    }
+    
+    &:active {
+       background: linear-gradient(#007600, #009000);
+    }
+  }

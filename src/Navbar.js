@@ -12,7 +12,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 const Navbar = ({ user}) => {
 // console.log(user.username)
     return (
-      <div>
+      <div> 
           <ul class="nav nav-pills nav-fill">
         <li class="nav-item">
           <NavLink class="nav-link active" to='/home' >Home</NavLink>

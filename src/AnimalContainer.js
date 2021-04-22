@@ -25,7 +25,7 @@ class AnimalContainer extends Component {
     render(){
         
         return(
-            <div className="row">
+            <div className="e-card e-card-horizontal">
              {/* <input type="text" className="input" placeholder="Search..." /> */}
              {this.state.clicked ? <SpecificCard animal={this.state.animal} favoriteAnimals={this.props.favoriteAnimals} clickBack={this.clickBack} /> : this.props.animals.map(animal => <AnimalCard  key={animal.id} animal={animal} favoriteAnimals={this.props.favoriteAnimals} clickedAnimal={this.clickedAnimal} />)}
 

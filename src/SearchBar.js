@@ -15,7 +15,7 @@ const SearchBar = ({changeFilter, sort, changeSort }) => {
             <br/>
             <label>
                 <strong>What animal are you looking for:</strong>
-                <select onChange={(e) => changeFilter(e.target.value)}>
+                <select className='filter' onChange={(e) => changeFilter(e.target.value)}>
                     <option value="dog">Dog's</option>
                     <option value="cat">Cat's</option>
                     <option value="All">All Animals</option>

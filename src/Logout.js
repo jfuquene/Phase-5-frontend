@@ -37,9 +37,9 @@ const Logout = (props) =>{
    Hope to see you back soon!
       <br></br>
    { 
-        props.loggedInStatus ? 
-        <Link href={login} onClick={handleClick}>log out?</Link> : 
-        null
+        props.loggedInStatus ? null :
+        <Link href={login} onClick={handleClick}>log out?</Link> 
+      
       } 
   </Figure.Caption>
 </Figure>

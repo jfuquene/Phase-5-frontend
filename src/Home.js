@@ -33,7 +33,6 @@ class Home extends Component {
 
 
     likeAnimal = (animal) => {
-      
    this.props.setFavorite(animal)
     }
 
@@ -59,11 +58,11 @@ render(){
   
   return(
         <div>
-              <div class="card bg-light text-black" style={{ width: '34rem' }} >
+              <div class="card bg-light text-white" style={{position: 'fluid', top: 10, left: 150, right: 0, bottom: 90, justifyContent: 'center', alignItems: 'center'}} >
                 <img src="https://www.gerberlife.com/blog/wp-content/uploads/family-dog.jpg" class="card-img" alt="..."/>
                 <div class="card-img-overlay">
-                 <h5 class="card-title">Begin your Journey here</h5>
-                <p class="card-text">Find the your families new Best Friend</p>
+                 <h1 class="card-title">Begin your Journey Here! </h1>
+                <h4 class="card-text">Find the your families new Best Friend</h4>
                 </div>
                 </div>
          

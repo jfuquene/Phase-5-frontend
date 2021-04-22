@@ -64,7 +64,6 @@ const User = () => {
 
               <option>Nevada</option>
               <option>New Hampshire</option>
-
               <option>New Jersey</option>
               
               <option>New Mexico</option>
@@ -96,6 +95,8 @@ const User = () => {
             <Form.Control />
           </Form.Group>
         </Form.Row>
+         <label for="customRange1" class="form-label">How far are you willing to go</label>
+          <input type="range" class="form-range" id="customRange1"></input>
       
         <Button variant="primary" type="submit">
           Submit
