@@ -1,6 +1,4 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project uses Javascript and React on the Front end as well as Ruby on Rails in the back-end that is a different repository. This application is a similar copy of the web application Petfinder.com. The user is able to log in, find which animals he likes by clickin on them and he can also unlike those animals. The user can view all the animals he has liked and also able to be riderected to a real page to donate to petfinder.com
 
 ## Available Scripts
 
